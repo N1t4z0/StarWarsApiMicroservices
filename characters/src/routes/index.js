@@ -10,4 +10,10 @@ router.get("/", async (req, res) => {
     }
 );
 
+router.post("/", async (req, res) => {
+    const nerCharacter = await Character.create(req.body);
+    response.success(res, 201, nerCharacter);       
+    },
+);
+
 module.exports = router;
