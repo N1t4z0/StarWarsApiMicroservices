@@ -7,7 +7,7 @@ const server = express();
 server.use(express.json());
 server.use(morgan("dev"));
 
-server.use(routes);
+server.use("/films", routes);
 server.use((req, res, next) => {
   console.log(`Received request: ${req.method} ${req.url}`);
   next();
