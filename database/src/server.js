@@ -1,11 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
-
+const routes = require("./routes/index");
 
 const server = express();
 
 server.use(express.json());
 server.use(morgan("dev"));
+server.use("/", routes)
 
 server.use((req, res, next) => {
   console.log(`Received request: ${req.method} ${req.url}`);
