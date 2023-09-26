@@ -1,6 +1,8 @@
 const planets = require("./planets.json");
+const axios = require("axios");
 
 module.exports = {list: async () =>  {
-        return planets;
-    },
+    const result = await axios.get("http://database:8004/Planets");  
+    return result.data
+},
 };
